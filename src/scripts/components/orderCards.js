@@ -1,8 +1,8 @@
 import renderToDOM from '../helpers/renderToDom';
 import clearDom from '../helpers/clearDom';
 
-const noCards = () => {
-  document.querySelector('#cards').innerHTML = '<h1>No Cards</h1>';
+const noOrders = () => {
+  document.querySelector('#main-container').innerHTML = '<h1>No Orders</h1>';
 };
 
 const showOrders = (array) => {
@@ -29,6 +29,6 @@ const showOrders = (array) => {
     });
     renderToDOM('#main-container', string);
   } else {
-    noCards();
+    noOrders();
   }
 };

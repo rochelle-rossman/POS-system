@@ -10,17 +10,17 @@ const renderNav = () => {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Create an Order</a>
+              <a class="nav-link" id="create-order" href="#">Create an Order</a>
             </li>
             <li>
-              <a class="nav-link" href="#">View Orders</a>
-            </li>           
+              <a class="nav-link" id "view-orders" href="#">View Orders</a>
+            </li>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search Orders" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
           <li id="logout"></li>
-          </ul> 
+          </ul>
         </div>
       </div>
     </nav>`;
