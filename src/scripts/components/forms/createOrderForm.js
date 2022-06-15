@@ -1,7 +1,7 @@
 import clearDom from '../../helpers/clearDom';
 import renderToDOM from '../../helpers/renderToDom';
 
-const addOrderForm = (uid, obj = {}) => {
+const addOrderForm = (obj = {}) => {
   clearDom();
   const domString = `
   <form id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}" class="mb-4">
@@ -18,7 +18,7 @@ const addOrderForm = (uid, obj = {}) => {
       <input type="email" class="form-control" id="customer-email" aria-describedby="customer-email" placeholder="Customer Email" value"${obj.customerEmail || ''}" required>
     </div>
       <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <input type="checkbox" class="form-check-input" id="call-in" ${obj.callIn ? 'checked' : ''}>
         <label class="form-check-label" for="exampleCheck1">Call In</label>
       </div>
       <button type="submit" class="btn btn-primary">Create/Edit Order</button>
