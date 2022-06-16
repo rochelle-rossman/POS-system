@@ -3,8 +3,8 @@ import firebaseConfig from './apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 
-const getRevenue = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/revenue.json`)
+const getRevenue = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/revenue.json?orderBy="firebaseKey"&equalTo="${firebaseKey}`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
