@@ -5,7 +5,7 @@ const noOrders = () => {
   document.querySelector('#main-container').innerHTML = '<h1>No Orders</h1>';
 };
 
-const showOrders = (array) => {
+const viewOrders = (array) => {
   clearDom();
 
   if (array.length) {
@@ -32,3 +32,5 @@ const showOrders = (array) => {
     noOrders();
   }
 };
+
+export default viewOrders;
