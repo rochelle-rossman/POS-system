@@ -14,6 +14,9 @@ const renderNav = () => {
             </li>
             <li>
               <a class="nav-link" href="#">View Orders</a>
+            </li> 
+            <li>
+              <a class="nav-link" id="revLink" href="#">View Revenue</a>
             </li>           
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search Orders" aria-label="Search">
