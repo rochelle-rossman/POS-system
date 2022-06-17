@@ -1,21 +1,21 @@
 import clearDom from '../../helpers/clearDom';
 import renderToDOM from '../../helpers/renderToDom';
 
-const addOrderForm = (obj = {}) => {
+const addOrderForm = (order = {}) => {
   clearDom();
   const domString = `
-  <form id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}" class="mb-4">
+  <form id="${order.firebaseKey ? `update-order--${order.firebaseKey}` : 'submit-order'}" class="mb-4">
       <div class="mb-3">
         <label for="orderName" class="form-label">Order Name</label>
-        <input type="text" class="form-control" id="order-name" aria-describedby="order-name" placeholder="Order Name" value''${obj.orderName || ''}'' required>
+        <input type="text" class="form-control" id="order-name" aria-describedby="order-name" placeholder="Order Name" value''${order.orderName || ''}'' required>
       </div>
       <div class="mb-3">
         <label for="customerPhone" class="form-label">Customer Phone Number</label>
-        <input type="number" class="form-control" id="customer-phone" aria-describedby="customer-phone" placeholder="Customer phone number" value"${obj.customerPhone || ''}" required>
+        <input type="number" class="form-control" id="customer-phone" aria-describedby="customer-phone" placeholder="Customer phone number" value"${order.customerPhone || ''}" required>
       </div>
       <div class="mb-3">
       <label for="customerEmail" class="form-label">Customer Email</label>
-      <input type="email" class="form-control" id="customer-email" aria-describedby="customer-email" placeholder="Customer Email" value"${obj.customerEmail || ''}" required>
+      <input type="email" class="form-control" id="customer-email" aria-describedby="customer-email" placeholder="Customer Email" value"${order.customerEmail || ''}" required>
     </div>
     <select class="form-select" aria-label="Default select example" id="call-in">
     <option selected>Order type</option>
