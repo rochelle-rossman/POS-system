@@ -2,6 +2,7 @@ import { deleteCustomer, getCustomers } from '../../api/customerData';
 import { deleteOrders, getOrders } from '../../api/orderData';
 import orderDetail from '../../api/mergedData';
 import viewOrders from '../components/orderCards';
+import addOrderForm from '../components/forms/createOrderForm';
 // import viewOrder from '../components/viewOrderDetails';
 import { showCustomers } from '../components/pages/customers';
 
@@ -28,6 +29,10 @@ const domEvents = () => {
     if (e.target.id.includes('view-orderdetails-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       orderDetail(firebaseKey).then(console.warn);
+    }
+    if (e.target.id.includes('update-order')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      addOrderForm(firebaseKey);
     }
   });
 };
