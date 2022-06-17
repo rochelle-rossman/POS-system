@@ -18,6 +18,7 @@ const viewOrders = (array) => {
         <p id="customer-phone>${order.customerPhone}</p>
         <p id="customer-email>${order.customerEmail}</p>
         <p id="call-in">${order.callIn}</p>
+        <p id="is-open">${order.isOpen}</p>
         <hr>
         <i class="btn btn-success fas fa-eye" id="view-orderdetails-btn--${order.firebaseKey}"></i>
         <i class="fas fa-edit btn btn-info" id="update-order--${order.firebaseKey}"></i>
