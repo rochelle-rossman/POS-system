@@ -1,5 +1,5 @@
 import signOut from '../helpers/auth/signOut';
-import renderRevenue
+import renderRevenue from '../components/showRevenue';
 
 const navEvt = () => {
   document.querySelector('#logout')
