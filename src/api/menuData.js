@@ -24,10 +24,10 @@ const createNewMenuItem = () => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const updateMenuItem = (obj, firebaseKey) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/menus/${obj.firebaseKey || firebaseKey}.json`, obj)
+const updateMenuItem = (menuObject, firebaseKey) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/menus/${obj.firebaseKey || firebaseKey}.json`, menuObject)
     .then(() => {
-      getMenuItems(obj.).then((menusArray) => resolve(menusArray));
+      getMenuItems(menuObject.).then((menusArray) => resolve(menusArray));
     }).catch((error) => reject(error));
 });
 
