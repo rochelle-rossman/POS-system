@@ -17,7 +17,7 @@ const renderRevenue = () => {
   <p>Mobile: {Interpolated Number of times Mobile was used</p>
   `;
 
-  renderToDOM('#app', domString);
+  renderToDOM('#main-container', domString);
 };
 
 export default renderRevenue;
