@@ -32,3 +32,5 @@ const viewOrders = (array) => {
     noOrders();
   }
 };
+
+export default viewOrders;
