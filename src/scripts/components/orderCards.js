@@ -17,7 +17,7 @@ const showOrders = (array) => {
         <h5 class="card-title">${order.firebaseKey}</h5>
         <p>${order.isOpen}</p>
         <p>${order.customerObject.customerPhone}</p>
-        <p>${order.customerObject.customerPhone}</p>
+        <p>${order.customerObject.customerEmail}</p>
         <p>${order.callIn}</p>
         <hr>
         <i class="btn btn-success fas fa-eye" id="view-orderdetails-btn--${order.firebaseKey}"></i>
