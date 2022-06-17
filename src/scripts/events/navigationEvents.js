@@ -1,8 +1,8 @@
 import signOut from '../helpers/auth/signOut';
 import renderRevenue from '../components/showRevenue';
-import { showCustomers } from '../components/pages/customers';
-import { getCustomers } from '../../api/customerData';
+import { getOrders } from '../../api/orderData';
 import addOrderForm from '../components/forms/createOrderForm';
+import viewOrders from '../components/orderCards';
 
 const navEvt = () => {
   document.querySelector('#logout')
@@ -14,7 +14,7 @@ const navEvt = () => {
     addOrderForm();
   });
   document.querySelector('#logo').addEventListener('click', () => {
-    getCustomers().then((customerArray) => showCustomers(customerArray));
+    getOrders().then((array) => viewOrders(array));
   });
 };
 

@@ -4,12 +4,14 @@ import renderNav from '../components/navBar';
 import navEvt from '../events/navigationEvents';
 import domEvents from '../events/domEvents';
 import { showCustomers } from '../components/pages/customers';
+import fromEvt from '../events/formEvents';
 
 const startApp = () => {
   domBuilder();
   renderNav();
   navEvt();
   domEvents();
+  fromEvt();
 
   getCustomers().then((customerArray) => showCustomers(customerArray));
 };
