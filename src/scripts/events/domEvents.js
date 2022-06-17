@@ -22,12 +22,6 @@ const domEvents = () => {
         });
       });
     }
-    if (e.target.id.includes('view-orderdetails-btn')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      viewOrder(firebaseKey).then(() => {
-        
-      })
-    }
   });
 };
 
