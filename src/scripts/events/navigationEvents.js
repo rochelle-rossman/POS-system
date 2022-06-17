@@ -16,6 +16,9 @@ const navEvt = () => {
   document.querySelector('#logo').addEventListener('click', () => {
     getOrders().then((array) => viewOrders(array));
   });
+  document.querySelector('#view-orders').addEventListener('click', () => {
+    getOrders().then((array) => viewOrders(array));
+  });
 };
 
 export default navEvt;
