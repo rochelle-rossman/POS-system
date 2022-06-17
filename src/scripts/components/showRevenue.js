@@ -1,8 +1,7 @@
-import clearDom from '../helpers/clearDom';
+// import clearDom from '../helpers/clearDom';
 import renderToDOM from '../helpers/renderToDom';
 
 const renderRevenue = () => {
-  clearDom();
   const domString = `
   <h2>Revenue</h2>
   <h1>TOTAL REVENUE: {Interpolated Data of ALL totals}</h1>

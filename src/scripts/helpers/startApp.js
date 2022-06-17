@@ -1,14 +1,14 @@
 import { getCustomers } from '../../api/customerData';
 import domBuilder from '../components/domBuilder';
 import renderNav from '../components/navBar';
-import revEvent from '../events/revEvent';
-import { showCustomers } from '../components/pages/customers';
+import navEvt from '../events/navigationEvents';
 import domEvents from '../events/domEvents';
+import { showCustomers } from '../components/pages/customers';
 
 const startApp = () => {
   domBuilder();
   renderNav();
-  revEvent();
+  navEvt();
   domEvents();
 
   getCustomers().then((customerArray) => showCustomers(customerArray));
