@@ -11,7 +11,7 @@ const fromEvt = () => {
         customerEmail: document.querySelector('#customer-email').value,
         orderName: document.querySelector('#order-name').value,
         date: new Date().toLocaleString(),
-        isOpen: true
+        isOpen: document.querySelector('#is-open').value
       };
       createOrder(orderObject).then((ordersArray) => viewOrders(ordersArray));
     }

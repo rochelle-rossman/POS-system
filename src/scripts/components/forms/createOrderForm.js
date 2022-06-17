@@ -23,9 +23,9 @@ const addOrderForm = (order = {}) => {
     <option value="Walk in">Walk in</option>
   </select>
   <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="true" id="is-open" checked>
+  <input class="form-check-input" type="checkbox" value="Order open" id="is-open" checked>
   <label class="form-check-label" for="flexCheckChecked">
-    Checked checkbox
+    Order open
   </label>
 </div>
       <button type="submit" class="btn btn-primary">Create/Edit Order</button>
