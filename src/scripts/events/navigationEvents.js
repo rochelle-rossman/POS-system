@@ -7,9 +7,6 @@ const navEvt = () => {
   document.querySelector('#revLink').addEventListener('click', () => {
     renderRevenue();
   });
-  // document.querySelector('#view-orders').addEventListener('click', () => {
-  //  getOrders().then((ordersArray) => showOrders(ordersArray));
-  // })
 };
 
 export default navEvt;
