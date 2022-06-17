@@ -1,9 +1,9 @@
-import { getCustomers } from '../../api/customerData';
+// import { getCustomers } from '../../api/customerData';
 import domBuilder from '../components/domBuilder';
 import renderNav from '../components/navBar';
 import navEvt from '../events/navigationEvents';
 import domEvents from '../events/domEvents';
-import { showCustomers } from '../components/pages/customers';
+// import { showCustomers } from '../components/pages/customers';
 import fromEvt from '../events/formEvents';
 
 const startApp = () => {
@@ -13,7 +13,7 @@ const startApp = () => {
   domEvents();
   fromEvt();
 
-  getCustomers().then((customerArray) => showCustomers(customerArray));
+//  getCustomers().then((customerArray) => showCustomers(customerArray));
 };
 
 export default startApp;
