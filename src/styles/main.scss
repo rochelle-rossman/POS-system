@@ -8,15 +8,21 @@ body {
 }
 .nav {
   background: #343A40;
+  padding-top: 1rem;
 }
 .nav a {
   color: white;
+}
+.navbar-brand {
+  margin-top: -1rem;
 }
 .navbar, .container-fluid, .navbar-nav {
   width: 90vw;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
+
 .main {
   padding: 1rem;
   display: flex;
