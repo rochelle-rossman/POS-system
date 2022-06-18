@@ -6,6 +6,7 @@ import homePage from '../components/pages/homepage';
 // import { showCustomers } from '../components/pages/customers';
 // import { showCustomers } from '../components/pages/customers';
 import fromEvt from '../events/formEvents';
+import btnEvt from '../events/buttonEvents';
 
 const startApp = () => {
   domBuilder();
@@ -15,6 +16,7 @@ const startApp = () => {
   homePage();
   // getCustomers().then((customerArray) => showCustomers(customerArray));
   fromEvt();
+  btnEvt();
 
 //  getCustomers().then((customerArray) => showCustomers(customerArray));
 };
