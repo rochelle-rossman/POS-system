@@ -8,7 +8,7 @@ const viewOrder = (obj) => {
   clearDom();
   let domString = ' ';
 
-  domString = '<h1>TOTAL: </h1>';
+  domString = '<h1>TOTAL: </h1><button type="button" class="btn btn-success" id="addItemBtn">Add item</button><button type="button" class="btn btn-primary" id="payBtn">Go to payment</button>';
 
   if (obj.itemObject.length) {
     let itemString = ' ';

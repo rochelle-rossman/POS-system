@@ -5,6 +5,7 @@ import navEvt from '../events/navigationEvents';
 import domEvents from '../events/domEvents';
 // import { showCustomers } from '../components/pages/customers';
 import fromEvt from '../events/formEvents';
+import btnEvt from '../events/buttonEvents';
 
 const startApp = () => {
   domBuilder();
@@ -12,6 +13,7 @@ const startApp = () => {
   navEvt();
   domEvents();
   fromEvt();
+  btnEvt();
 
 //  getCustomers().then((customerArray) => showCustomers(customerArray));
 };
