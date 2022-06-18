@@ -9,6 +9,7 @@ const formEvents = () => {
         itemName: document.querySelector('#item-name').value,
         itemPrice: document.querySelector('#item-price').value,
         itemDescription: document.querySelector('#item-description').value,
+        orderId: document.querySelector(),
         itemCategory: document.querySelector('#item-category').value
       };
       createNewMenuItem(itemObject).then(() => getMenuItems().then());
