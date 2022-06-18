@@ -4,15 +4,15 @@ import renderToDOM from '../helpers/renderToDom';
 const noItems = () => {
   document.querySelector('#main-container').innerHTML = '<h1>No Items</h1>';
 };
-const viewOrder = (array) => {
+const viewOrder = (obj) => {
   clearDom();
   let domString = ' ';
 
   domString = '<h1>TOTAL: </h1>';
 
-  if (array.length) {
+  if (obj.itemObject.length) {
     let itemString = ' ';
-    array.forEach((item) => {
+    obj.itemObject.forEach((item) => {
       itemString += `
     <div class="mt-5 d-flex flex-wrap">
       <div class="d-flex flex-column">
