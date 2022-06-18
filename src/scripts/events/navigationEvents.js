@@ -1,7 +1,6 @@
 import signOut from '../helpers/auth/signOut';
 import renderRevenue from '../components/showRevenue';
-import { showCustomers } from '../components/pages/customers';
-import { getCustomers } from '../../api/customerData';
+import homePage from '../components/pages/homepage';
 import addOrderForm from '../components/forms/createOrderForm';
 
 const navEvt = () => {
@@ -14,7 +13,7 @@ const navEvt = () => {
     addOrderForm();
   });
   document.querySelector('#logo').addEventListener('click', () => {
-    getCustomers().then((customerArray) => showCustomers(customerArray));
+    homePage();
   });
 };
 

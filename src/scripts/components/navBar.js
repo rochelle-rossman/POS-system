@@ -1,9 +1,12 @@
 import renderToDOM from '../helpers/renderToDom';
+// import logoSVG from '';
 
 const renderNav = () => {
-  const domString = `<nav class="navbar navbar-expand-md bg-light">
+  const domString = `<nav class="navbar navbar-expand-md">
       <div class="container-fluid">
-        <a class="navbar-brand" id="logo" href="#">Logo</a>
+        <a class="navbar-brand" id="logo" href="#">
+          
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,8 +22,10 @@ const renderNav = () => {
               <a class="nav-link" id="revLink" href="#">View Revenue</a>
             </li>
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search Orders" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+          <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Search Orders" aria-label="Search" aria-describedby="button-addon2">
+          <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+        </div>
           </form>
           <li id="logout"></li>
           </ul>
