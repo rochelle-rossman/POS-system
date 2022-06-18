@@ -14,27 +14,27 @@ const getMenuItems = () => new Promise((resolve, reject) => {
 });
 
 const createNewMenuItem = () => new Promise((resolve, reject) => {
-  axios.post(`${dbUrl}/menus.json`, obj)
+  axios.post(`${dbUrl}/items.json`, obj)
     .then((response) => {
       const addFBK = { firebaseKey: response.data.name };
-      axios.patch(`${dbUrl}/menus/${response.data.name}.json`, addFBK)
+      axios.patch(`${dbUrl}/items/${response.data.name}.json`, addFBK)
         .then(() => {
-          getMenuItems().then((menusArray) => resolve(menusArray));
+          getMenuItems().then((itemArray) => resolve(itemArray));
         });
     }).catch((error) => reject(error));
 });
 
-const updateMenuItem = (menuObject, firebaseKey) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/menus/${obj.firebaseKey || firebaseKey}.json`, menuObject)
+const updateMenuItem = (itemObject, firebaseKey) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/items/${obj.firebaseKey || firebaseKey}.json`, itemObject)
     .then(() => {
-      getMenuItems(menuObject.).then((menusArray) => resolve(menusArray));
+      getMenuItems(itemObject.).then((itemArray) => resolve(itemArray));
     }).catch((error) => reject(error));
 });
 
 const deleteMenuItem = (firebaseKey, ) => new Promise((resolve, reject) => {
-  axios.delete(`${dbUrl}/menus/${firebaseKey}.json`)
+  axios.delete(`${dbUrl}/items/${firebaseKey}.json`)
     .then(() => {
-      getMyWords().then((menusArray) => resolve(menusArray));
+      getMyWords().then((itemArray) => resolve(itemArray));
     }).catch((error) => reject(error));
 });
 
