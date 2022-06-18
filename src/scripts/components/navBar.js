@@ -17,7 +17,7 @@ const renderNav = () => {
               <a class="nav-link" id="create-order" href="#">Create an Order</a>
             </li>
             <li>
-              <a class="nav-link" id "view-orders" href="#">View Orders</a>
+              <a class="nav-link" id="view-orders" href="#">View Orders</a>
             </li>
             <li>
               <a class="nav-link" id="revLink" href="#">View Revenue</a>

@@ -1,25 +1,32 @@
 import clearDom from '../helpers/clearDom';
 import renderToDOM from '../helpers/renderToDom';
 
-const viewOrder = (obj) => {
+const noItems = () => {
+  document.querySelector('#main-container').innerHTML = '<h1>No Items</h1>';
+};
+const viewOrder = (array) => {
   clearDom();
   let domString = ' ';
-  let itemString = ' ';
 
   domString = '<h1>TOTAL: </h1>';
 
-  const array = obj.orderItems;
-  array.forEach((item) => {
-    itemString += `
+  if (array.length) {
+    let itemString = ' ';
+    array.forEach((item) => {
+      itemString += `
     <div class="mt-5 d-flex flex-wrap">
       <div class="d-flex flex-column">
         <h2>${item.itemName}</h2>
         <h3>${item.itemPrice}</h3>
-        <i id="edit-item--${obj.firebaseKey}" class="fas fa-edit btn btn-info"></i>
-       <i id="delete-item--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
+        <i id="edit-item--${item.objectOrder.firebaseKey}" class="fas fa-edit btn btn-info"></i>
+       <i id="delete-item--${item.objectOrder.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
         </div>
       </div>`;
-  });
-  renderToDOM('#view', domString);
-  renderToDOM('#main-container', itemString);
+    });
+    renderToDOM('#view', domString);
+    renderToDOM('#main-container', itemString);
+  } else {
+    noItems();
+  }
 };
+export default viewOrder;

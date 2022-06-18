@@ -1,14 +1,13 @@
-import { getCustomers } from './customerData';
-import { getOrders } from './orderData';
+import { getOrderItems, getSingleOrder } from './orderData';
 
-const showOrders = () => new Promise((resolve, reject) => {
-  getOrders()
+const orderDetail = (firebaseKey) => new Promise((resolve, reject) => {
+  getSingleOrder(firebaseKey)
     .then((orderObject) => {
-      getCustomers(orderObject.firebaseKey)
-        .then((customerObject) => {
-          resolve({ orderObject, ...customerObject });
+      getOrderItems(orderObject.firebaseKey)
+        .then((itemObject) => {
+          resolve({ itemObject, ...orderObject });
         });
     }).catch((error) => reject(error));
 });
 
-export default showOrders;
+export default orderDetail;
