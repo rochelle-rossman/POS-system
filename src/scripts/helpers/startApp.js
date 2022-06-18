@@ -1,8 +1,9 @@
-// import { getCustomers } from '../../api/customerData';
 import domBuilder from '../components/domBuilder';
 import renderNav from '../components/navBar';
 import navEvt from '../events/navigationEvents';
 import domEvents from '../events/domEvents';
+import homePage from '../components/pages/homepage';
+// import { showCustomers } from '../components/pages/customers';
 // import { showCustomers } from '../components/pages/customers';
 import fromEvt from '../events/formEvents';
 
@@ -11,6 +12,8 @@ const startApp = () => {
   renderNav();
   navEvt();
   domEvents();
+  homePage();
+  // getCustomers().then((customerArray) => showCustomers(customerArray));
   fromEvt();
 
 //  getCustomers().then((customerArray) => showCustomers(customerArray));
