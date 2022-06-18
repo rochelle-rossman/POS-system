@@ -1,11 +1,11 @@
 import renderToDOM from '../helpers/renderToDom';
-// import logoSVG from '';
+import logo from '../';
 
 const renderNav = () => {
   const domString = `<nav class="navbar navbar-expand-md">
       <div class="container-fluid">
         <a class="navbar-brand" id="logo" href="#">
-          
+        <img src="./img/logo.png" onerror="this.onerror=null; this.src='./img/logo.png'">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
