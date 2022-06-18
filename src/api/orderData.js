@@ -35,8 +35,8 @@ const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 const getOrderItems = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/menus.json?orderBy="firebaseKey"&equalTo="${firebaseKey}"`)
-    .then((response) => resolve(response.data))
+  axios.get(`${dbUrl}/menus/${firebaseKey}.json`)
+    .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
 
