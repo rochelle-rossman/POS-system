@@ -23,3 +23,4 @@ const viewOrder = (obj) => {
   renderToDOM('#view', domString);
   renderToDOM('#main-container', itemString);
 };
+export default viewOrder;
