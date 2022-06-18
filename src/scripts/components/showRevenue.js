@@ -1,5 +1,6 @@
 import clearDom from '../helpers/clearDom';
 import renderToDOM from '../helpers/renderToDom';
+// import { totalCustomers } from '../../api/customerData';
 
 const renderRevenue = () => {
   clearDom();
