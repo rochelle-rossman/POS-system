@@ -29,13 +29,13 @@ const createOrder = (cardObject) => new Promise((resolve, reject) => {
 });
 
 const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/orders/${firebaseKey}`.json)
+  axios.get(`${dbUrl}/orders/${firebaseKey}.json`)
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));
 });
 
 const getOrderItems = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/menus.json?orderBy="orderId"&equalTo="${firebaseKey}"`)
+  axios.get(`${dbUrl}/menus.json?orderBy="firebaseKey"&equalTo="${firebaseKey}"`)
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));
 });

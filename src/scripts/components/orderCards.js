@@ -14,11 +14,10 @@ const viewOrders = (array) => {
       string += `
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <h5 id="order-name">${order.orderName}</h5>
-        <p id="customer-phone>${order.customerPhone}</p>
-        <p id="customer-email>${order.customerEmail}</p>
+        <h5>${order.orderName}</h5>
+        <p id="customer-phone">${order.customerPhone}</p>
+        <p id="customer-email">${order.customerEmail}</p>
         <p id="call-in">${order.callIn}</p>
-        <p id="is-open">${order.isOpen}</p>
         <hr>
         <i class="btn btn-success fas fa-eye" id="view-orderdetails-btn--${order.firebaseKey}"></i>
         <i class="fas fa-edit btn btn-info" id="update-order--${order.firebaseKey}"></i>
