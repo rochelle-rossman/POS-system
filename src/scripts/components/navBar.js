@@ -1,5 +1,5 @@
 import renderToDOM from '../helpers/renderToDom';
-import logo from '../';
+// import logo from '../';
 
 const renderNav = () => {
   const domString = `<nav class="navbar navbar-expand-md">
