@@ -1,10 +1,10 @@
 import { deleteCustomer, getCustomers } from '../../api/customerData';
 import { deleteOrders, getOrders, getSingleOrder } from '../../api/orderData';
-import orderDetail from '../../api/mergedData';
 import viewOrders from '../components/orderCards';
 import addOrderForm from '../components/forms/createOrderForm';
-// import viewOrder from '../components/viewOrderDetails';
+import orderDetail from '../../api/mergedData';
 import { showCustomers } from '../components/pages/customers';
+import viewOrder from '../components/viewOrderDetails';
 
 // Customer card events
 const domEvents = () => {
@@ -28,7 +28,7 @@ const domEvents = () => {
     }
     if (e.target.id.includes('view-orderdetails-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      orderDetail(firebaseKey).then();
+      orderDetail(firebaseKey).then((itemOrderObject) => viewOrder(itemOrderObject));
     }
     if (e.target.id.includes('update-order')) {
       const [, firebaseKey] = e.target.id.split('--');
