@@ -29,7 +29,7 @@ const createOrder = (cardObject) => new Promise((resolve, reject) => {
 });
 
 const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/orders/${firebaseKey}`.json)
+  axios.get(`${dbUrl}/orders/${firebaseKey}.json`)
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));
 });
