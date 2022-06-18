@@ -13,9 +13,16 @@ const addItemForm = (obj = {}) => {
     <label for="itemPrice" class="form-label">Item Price</label>
     <input type="number" class="form-control" id="item-price">
   </div>
-
-  <button type="submit" class="btn btn-primary">Add/Edit Item</button>
-</form>`;
+  <div class="mb-3">
+    <label for="itemDescription" class="form-label">Item Description</label>
+    <input type="text" class="form-control" id="item-description">
+ </div>
+ <div class="mb-3">
+    <label for="itemCategory" class="form-label">Item Category</label>
+    <input type="text" class="form-control" id="item-category">
+ </div>
+ <button type="submit" class="btn btn-primary">Add/Edit Item</button>
+ </form>`;
   renderToDOM('#main-container', domString);
 };
 export default addItemForm;
