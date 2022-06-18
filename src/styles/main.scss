@@ -3,7 +3,46 @@
 
 
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: #2A2A2A;
   text-align: center;
+}
+.nav {
+  background: #343A40;
+  padding-top: 1rem;
+}
+.nav a {
+  color: white;
+}
+.navbar-brand {
+  margin-top: -1rem;
+}
+.navbar, .container-fluid, .navbar-nav {
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.main {
+  padding: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+h1 {
+  color: white;
+  margin: 2rem;
+}
+.group {
+display: flex;
+flex-flow: column nowrap;
+justify-content: space-around;
+height: 30vh;
+width: 20vw;
+margin-top: 5rem;
+}
+.btn {
+  color: white
 }
