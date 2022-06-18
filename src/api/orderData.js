@@ -34,6 +34,12 @@ const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getOrderItems = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/menus/${firebaseKey}.json`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
 const updateOrder = (cardObject) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/orders/${cardObject.firebaseKey}.json`, cardObject)
     .then(() => getOrders(cardObject).then(resolve))
@@ -45,5 +51,6 @@ export {
   deleteOrders,
   createOrder,
   getSingleOrder,
-  updateOrder
+  updateOrder,
+  getOrderItems
 };
