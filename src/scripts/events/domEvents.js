@@ -8,6 +8,8 @@ import { showCustomers } from '../components/pages/customers';
 import viewOrder from '../components/viewOrderDetails';
 import renderRevenue from '../components/showRevenue';
 // import { getRevenue } from '../../api/revenueData';
+import addItemForm from '../components/forms/addItemForm';
+import { getSingleItem } from '../../api/menuData';
 
 // Customer card events
 const domEvents = () => {
@@ -45,6 +47,10 @@ const domEvents = () => {
     }
     if (e.target.id.includes('revenue-dom')) {
       renderRevenue();
+    }
+    if (e.target.id.includes('edit-item')) {
+      const [, firebasekey] = e.target.id.split('--');
+      getSingleItem(firebasekey).then((itemObject) => addItemForm(itemObject));
     }
   });
 };
