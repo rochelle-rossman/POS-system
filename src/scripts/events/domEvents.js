@@ -36,7 +36,7 @@ const domEvents = () => {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((orderObject) => addOrderForm(orderObject));
     }
-    if (e.taerget.id.includes('edit-item')) {
+    if (e.target.id.includes('edit-item')) {
       const [, firebasekey] = e.target.id.split('--');
       getSingleItem(firebasekey).then((itemObject) => addItemForm(itemObject));
     }
