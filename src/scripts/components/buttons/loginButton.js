@@ -1,4 +1,5 @@
 import signIn from '../../helpers/auth/signIn';
+// import logosvg from './logos/logo.png';
 
 // GOOGLE LOGIN BUTTON
 const loginButton = () => {

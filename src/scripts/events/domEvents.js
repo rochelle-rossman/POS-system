@@ -1,10 +1,13 @@
+/* eslint-disable object-curly-newline */
 import { deleteCustomer, getCustomers } from '../../api/customerData';
-import { deleteOrders, getOrders, getSingleOrder } from '../../api/orderData';
+import { deleteOrders, getOrders, getSingleOrder, createOrder } from '../../api/orderData';
 import viewOrders from '../components/orderCards';
 import addOrderForm from '../components/forms/createOrderForm';
 import orderDetail from '../../api/mergedData';
 import { showCustomers } from '../components/pages/customers';
 import viewOrder from '../components/viewOrderDetails';
+import renderRevenue from '../components/showRevenue';
+// import { getRevenue } from '../../api/revenueData';
 import addItemForm from '../components/forms/addItemForm';
 import { getSingleItem } from '../../api/menuData';
 
@@ -35,6 +38,15 @@ const domEvents = () => {
     if (e.target.id.includes('update-order')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((orderObject) => addOrderForm(orderObject));
+    }
+    if (e.target.id.includes('view-orders-dom')) {
+      getOrders().then((array) => viewOrders(array));
+    }
+    if (e.target.id.includes('create-order-dom')) {
+      addOrderForm().then((array) => createOrder(array));
+    }
+    if (e.target.id.includes('revenue-dom')) {
+      renderRevenue();
     }
     if (e.target.id.includes('edit-item')) {
       const [, firebasekey] = e.target.id.split('--');
