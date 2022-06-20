@@ -6,19 +6,23 @@ import addOrderForm from '../components/forms/createOrderForm';
 import viewOrders from '../components/orderCards';
 
 const navEvt = () => {
-  document.querySelector('#logout')
-    .addEventListener('click', signOut);
-  document.querySelector('#revLink').addEventListener('click', () => {
-    renderRevenue();
-  });
-  document.querySelector('#create-order').addEventListener('click', () => {
-    addOrderForm();
-  });
-  document.querySelector('#logo').addEventListener('click', () => {
-    homePage();
-  });
-  document.querySelector('#view-orders').addEventListener('click', () => {
-    getOrders().then((array) => viewOrders(array));
+  document.querySelector('#navigation').addEventListener('click', (e) => {
+    if (e.target.id.includes('logout')) {
+      signOut();
+    }
+    if (e.target.id.includes('revLink')) {
+      renderRevenue();
+    }
+    if (e.target.id.includes('create-order')) {
+      addOrderForm();
+    }
+    if (e.target.id.includes('logo')) {
+      homePage();
+    }
+    if (e.target.id.includes('view-orders')) {
+      getOrders().then((array) => viewOrders(array));
+    }
   });
 };
+
 export default navEvt;
