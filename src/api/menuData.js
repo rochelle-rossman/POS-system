@@ -27,7 +27,7 @@ const createNewMenuItem = () => new Promise((resolve, reject) => {
 const updateMenuItem = (itemObject, firebaseKey) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/items/${obj.firebaseKey || firebaseKey}.json`, itemObject)
     .then(() => {
-      getMenuItems(itemObject.).then((itemArray) => resolve(itemArray));
+      getMenuItems(itemObject).then((itemArray) => resolve(itemArray));
     }).catch((error) => reject(error));
 });
 
