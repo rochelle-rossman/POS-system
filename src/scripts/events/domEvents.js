@@ -5,6 +5,8 @@ import addOrderForm from '../components/forms/createOrderForm';
 import orderDetail from '../../api/mergedData';
 import { showCustomers } from '../components/pages/customers';
 import viewOrder from '../components/viewOrderDetails';
+import addItemForm from '../components/forms/addItemForm';
+import { getSingleItem } from '../../api/menuData';
 
 // Customer card events
 const domEvents = () => {
@@ -33,6 +35,10 @@ const domEvents = () => {
     if (e.target.id.includes('update-order')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((orderObject) => addOrderForm(orderObject));
+    }
+    if (e.target.id.includes('edit-item')) {
+      const [, firebasekey] = e.target.id.split('--');
+      getSingleItem(firebasekey).then((itemObject) => addItemForm(itemObject));
     }
   });
 };
