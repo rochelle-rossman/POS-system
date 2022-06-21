@@ -62,15 +62,7 @@ const formEvt = () => {
         firebaseKey
       };
       updateMenuItem(itemObject)
-        .then((itemArray) => {
-          itemArray.forEach((item) => {
-            if (firebaseKey === item.firebaseKey) {
-              orderDetail(item.orderId).then((orderObject) => viewOrder(orderObject));
-            } else {
-              console.warn('else');
-            }
-          });
-        });
+        .then(() => orderDetail(itemObject.orderId).then((orderObject) => viewOrder(orderObject)));
     }
   });
 };
