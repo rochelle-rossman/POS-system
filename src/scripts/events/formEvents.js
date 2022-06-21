@@ -45,12 +45,13 @@ const formEvt = () => {
         itemDescription: document.querySelector('#item-description').value,
         orderId: firebaseKey,
         itemCategory: document.querySelector('#item-category').value
+
       };
       createNewMenuItem(itemObject)
         .then((itemArray) => {
           itemArray.forEach((item) => {
             if (firebaseKey === item.orderId) {
-              orderDetail(item.orderId).then((orderObject) => viewOrder(orderObject));
+              orderDetail(itemObject.orderId).then((orderObject) => viewOrder(orderObject));
             } else {
               console.warn('else');
             }
