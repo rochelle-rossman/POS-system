@@ -1,7 +1,7 @@
 /* eslint-disable object-curly-newline */
 import { deleteCustomer, getCustomers } from '../../api/customerData';
 import { deleteOrders, getOrders, getSingleOrder, createOrder } from '../../api/orderData';
-import viewOrders from '../components/orderCards';
+import { viewOrders } from '../components/orderCards';
 import addOrderForm from '../components/forms/createOrderForm';
 import orderDetail from '../../api/mergedData';
 import { showCustomers } from '../components/pages/customers';
