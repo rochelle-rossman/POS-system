@@ -46,6 +46,26 @@ margin-top: 5rem;
 .btn {
   color: white
 }
+.mb-4 {
+  width: 25vw;
+  height: 60vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.card {
+  margin: .5rem;
+}
 .card-body {
   color:#2A2A2A;
+}
+.revPage {
+  height: 65vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+.revPage p {
+  margin: 0;
 }

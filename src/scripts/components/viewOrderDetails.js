@@ -17,7 +17,7 @@ const viewOrder = (obj) => {
     <div class="mt-5 d-flex flex-wrap">
       <div class="d-flex flex-column">
         <h2>${item.itemName}</h2>
-        <h3>${item.itemPrice}</h3>
+        <h3>$${item.itemPrice}</h3>
         <i id="edit-item--${item.firebasekey}" class="fas fa-edit btn btn-info"></i>
        <i id="delete-item--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
         </div>

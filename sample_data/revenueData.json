@@ -1,20 +1,18 @@
-{
-  "-MiBsfuTafbEQ7eAULxV" : {
-    "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
-    "totalRevenue" : 1250,
-    "dateOrdered": {
-    "earliestDate" : "9:05:27",
-    "latestDate" : "9:05:33"
-  },
-    "orderType": {
-      "callIn": 1,
-      "walkIn": 7
-    },
-    "totalTips": 2.99,
-    "paymentMobile": {
-      "cash": 3,
-      "credit": 2,
-      "mobile": 1
-    }
-  }
+  {
+ "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
+"totalRevenue" : 1250,
+"dateOrdered": {
+"earliestDate" : "9:05:27",
+"latestDate" : "9:05:33"
+},
+"orderType": {
+  "callIn": 1,
+  "walkIn": 7
+},
+"totalTips": 2.99,
+"paymentType": {
+  "cash": 3,
+  "credit": 2,
+  "mobile": 1
 }
+  }

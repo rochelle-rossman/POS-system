@@ -11,7 +11,7 @@ const addOrderForm = (order = {}) => {
       </div>
       <div class="mb-3">
         <label for="customerPhone" class="form-label">Customer Phone Number</label>
-        <input type="number" class="form-control" id="customer-phone" aria-describedby="customer-phone" placeholder="Customer phone number" value"${order.customerPhone || ''}" required>
+        <input type="text" class="form-control" id="customer-phone" aria-describedby="customer-phone" placeholder="Customer phone number" value"${order.customerPhone || ''}" required>
       </div>
       <div class="mb-3">
       <label for="customerEmail" class="form-label">Customer Email</label>

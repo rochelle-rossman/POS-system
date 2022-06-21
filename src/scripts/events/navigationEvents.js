@@ -4,6 +4,7 @@ import homePage from '../components/pages/homepage';
 import { getOrders } from '../../api/orderData';
 import addOrderForm from '../components/forms/createOrderForm';
 import viewOrders from '../components/orderCards';
+import { getRevenue } from '../../api/revenueData';
 
 const navEvt = () => {
   document.querySelector('#navigation').addEventListener('click', (e) => {
@@ -11,7 +12,7 @@ const navEvt = () => {
       signOut();
     }
     if (e.target.id.includes('revLink')) {
-      renderRevenue();
+      getRevenue().then((array) => renderRevenue(array));
     }
     if (e.target.id.includes('create-order')) {
       addOrderForm();

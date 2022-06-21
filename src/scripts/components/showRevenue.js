@@ -4,23 +4,31 @@ import { getRevenue } from '../../api/revenueData';
 
 const renderRevenue = (obj) => {
   clearDom();
-  obj.forEach((item) => {
-    const domString = `
+  console.warn(obj);
+  const domString = `
+  <div class="revPage">
+  <div class="revHead">
   <h2>Revenue</h2>
-  <h1>TOTAL REVENUE: <h1 id="totalRev"></h1></h1>
+  <h1>TOTAL REVENUE: $${obj[4]}</h1>
+  </div>
+  <div class="dates">
   <p>Date Range:</p>
-  <p id="rangeOfDates">{Interpolated First Order's Date} - {Interpolated Last Order's Date}</p>
-  <p>Total Tips: <p id="totalTips">{Interpolated Total Tip amount from all tips}</p></p>
-  <p>Total Call in Orders: {Interpolated Number of Call in Orders}</p>
-  <p>Total Walk in Orders: {Interpolated Number of Walk in Orders}</p>
+  <p class="rangeOfDates">${obj[0].earliestDate} - ${obj[0].earliestDate}</p>
+  </div>
+  <div class="extras">
+  <p>Total Tips: $${obj[5]}</p>
+  <p>Total Call in Orders: ${obj[2].callIn}</p>
+  <p>Total Walk in Orders: ${obj[2].walkIn}</p>
+  </div>
+  <div class="paymentTypes">
   <p>Total Payment Types:</p>
-  <p>Cash- {Interpolated Number of times Cash was used}</p>
-  <p>Credit- {Interpolated Number of times Credit was used</p>
-  <p>Mobile- {Interpolated Number of times Mobile was used</p>
+  <p>Cash - ${obj[3].cash}</p>
+  <p>Credit - ${obj[3].credit}</p>
+  <p>Mobile - ${obj[3].mobile}</p>
+  </div>
+  </div>
   `;
-    console.warn(item);
-    renderToDOM('#main-container', domString);
-  });
+  renderToDOM('#main-container', domString);
 };
 getRevenue();
 
