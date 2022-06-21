@@ -7,19 +7,19 @@ const addItemForm = (obj = {}) => {
   <form id="${obj.firebaseKey ? `update-item--${obj.firebaseKey}` : 'submit-item'}" class="mb-4>
   <div class="mb-3">
     <label for="itemName" class="form-label">Item Name</label>
-    <input type="text" class="form-control" id="item-name" aria-describedby="item-name">
+    <input type="text" class="form-control" id="item-name" aria-describedby="item-name" value="${obj.itemName || ''}">
   </div>
   <div class="mb-3">
     <label for="itemPrice" class="form-label">Item Price</label>
-    <input type="number" class="form-control" id="item-price">
+    <input type="number" class="form-control" id="item-price" value="${obj.itemPrice || ''}">
   </div>
   <div class="mb-3">
     <label for="itemDescription" class="form-label">Item Description</label>
-    <input type="text" class="form-control" id="item-description">
+    <input type="text" class="form-control" id="item-description" value="${obj.itemDescription || ''}">
  </div>
  <div class="mb-3">
     <label for="itemCategory" class="form-label">Item Category</label>
-    <input type="text" class="form-control" id="item-category">
+    <input type="text" class="form-control" id="item-category" value="${obj.itemCAtegory || ''}">
  </div>
  <button type="submit" id="add-item" class="btn btn-primary">Add/Edit Item</button>
  </form>`;
