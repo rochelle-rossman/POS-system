@@ -24,8 +24,7 @@ const renderNav = () => {
             </li>
           <form class="d-flex" role="search">
           <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Search Orders" aria-label="Search" aria-describedby="button-addon2">
-          <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+          <input type="text" class="form-control" placeholder="Search Orders" aria-label="Search">
         </div>
           </form>
           <li id="logout"></li>

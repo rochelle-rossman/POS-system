@@ -5,8 +5,10 @@ import domEvents from '../events/domEvents';
 import homePage from '../components/pages/homepage';
 import fromEvt from '../events/formEvents';
 import btnEvt from '../events/buttonEvents';
+import showLogo from '../components/logomain';
 
 const startApp = (user) => {
+  showLogo();
   domBuilder();
   renderNav();
   navEvt();

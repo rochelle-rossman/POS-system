@@ -6,9 +6,9 @@ import {
   createNewMenuItem,
   updateMenuItem,
 } from '../../api/menuData';
-import viewOrders from '../components/orderCards';
 import viewOrder from '../components/viewOrderDetails';
 import orderDetail from '../../api/mergedData';
+import { viewOrders } from '../components/orderCards';
 
 const formEvt = () => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {

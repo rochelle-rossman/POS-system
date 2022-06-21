@@ -1,7 +1,7 @@
 /* eslint-disable object-curly-newline */
 import { deleteCustomer, getCustomers } from '../../api/customerData';
 import { deleteOrders, getOrders, getSingleOrder, createOrder } from '../../api/orderData';
-import viewOrders from '../components/orderCards';
+import { viewOrders } from '../components/orderCards';
 import addOrderForm from '../components/forms/createOrderForm';
 import orderDetail from '../../api/mergedData';
 import { showCustomers } from '../components/pages/customers';
@@ -9,7 +9,7 @@ import viewOrder from '../components/viewOrderDetails';
 import renderRevenue from '../components/showRevenue';
 // import { getRevenue } from '../../api/revenueData';
 import addItemForm from '../components/forms/addItemForm';
-import { getSingleItem } from '../../api/menuData';
+import { getMenuItems, getSingleItem } from '../../api/menuData';
 
 // Customer card events
 const domEvents = () => {
@@ -51,6 +51,9 @@ const domEvents = () => {
     if (e.target.id.includes('edit-item')) {
       const [, firebasekey] = e.target.id.split('--');
       getSingleItem(firebasekey).then((itemObject) => addItemForm(itemObject));
+    }
+    if (e.target.id.includes('add-item')) {
+      getMenuItems();
     }
   });
 };
