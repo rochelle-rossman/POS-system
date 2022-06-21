@@ -7,7 +7,8 @@ import { noOrders, viewOrders } from '../components/orderCards';
 
 const navEvt = () => {
   document.querySelector('#navigation').addEventListener('click', (e) => {
-    if (e.target.id.includes('logout')) {
+    if (e.target.id.includes('google-auth')) {
+      console.warn('clicked');
       signOut();
     }
     if (e.target.id.includes('revLink')) {
