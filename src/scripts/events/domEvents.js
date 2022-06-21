@@ -1,5 +1,7 @@
 import { deleteCustomer, getCustomers } from '../../api/customerData';
-import { deleteOrders, getOrders, getSingleOrder } from '../../api/orderData';
+import {
+  deleteOrders, getOrders, getSingleOrder, updateOrder
+} from '../../api/orderData';
 import viewOrders from '../components/orderCards';
 import addOrderForm from '../components/forms/createOrderForm';
 import orderDetail from '../../api/mergedData';
@@ -33,6 +35,15 @@ const domEvents = () => {
     if (e.target.id.includes('update-order')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((orderObject) => addOrderForm(orderObject));
+      const orderObject = {
+        orderName: document.querySelector('#order-name').value,
+        customerPhone: document.querySelector('#customer-phone').value,
+        customerEmail: document.querySelector('#customer-email').value,
+        callIn: document.querySelector('#call-in').value,
+        isOpen: document.querySelector('#is-open').value,
+        firebaseKey
+      };
+      updateOrder(orderObject).then(viewOrders);
     }
   });
 };

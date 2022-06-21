@@ -1,11 +1,20 @@
 {
   "-MiBsfuTafbEQ7eAULxV" : {
     "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
-    "orderId" : "-MiBsfuTafbEQ7eAULxV",
-    "timeEntry" : "9:05:27",
-    "orderAmount" : 101.01,
+    "totalRevenue" : 1250,
+    "dateOrdered": {
+    "earliestDate" : "9:05:27",
+    "latestDate" : "9:05:33"
+  },
+    "orderType": {
+      "callIn": 1,
+      "walkIn": 7
+    },
     "totalTips": 2.99,
-    "paymentType": "",
-    "orderType": "Mobile"
+    "paymentMobile": {
+      "cash": 3,
+      "credit": 2,
+      "mobile": 1
+    }
   }
 }

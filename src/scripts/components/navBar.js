@@ -3,7 +3,7 @@ import pzaSVG from './logos/pza.svg';
 import pzaPNG from './logos/pza.png';
 
 const renderNav = () => {
-  const domString = `<nav class="navbar navbar-expand-md">
+  const domString = `<nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
         <a class="navbar-brand" id="logo" href="#">
         <img src="${pzaSVG}" onerror="this.onerror=null; this.src='${pzaPNG}'" height="50rem">
