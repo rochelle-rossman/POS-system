@@ -6,7 +6,7 @@ const noItems = () => {
 };
 const viewOrder = (obj) => {
   clearDom();
-  let domString = ' ';
+  let domString = '';
 
   domString = `<h1>TOTAL: </h1><button type="button" class="btn btn-success" id="addItemBtn--${obj.firebaseKey}">Add item</button><button type="button" class="btn btn-primary" id="payBtn">Go to payment</button>`;
 

@@ -7,6 +7,9 @@ const noOrders = () => {
 
 const viewOrders = (array) => {
   clearDom();
+  const domString = '<div id="card-container" class="cards"></div>';
+
+  renderToDOM('#main-container', domString);
 
   if (array.length) {
     let string = ' ';
@@ -26,10 +29,10 @@ const viewOrders = (array) => {
     </div>
     `;
     });
-    renderToDOM('#main-container', string);
+    renderToDOM('#card-container', string);
   } else {
     noOrders();
   }
 };
 
-export default viewOrders;
+export { noOrders, viewOrders };
