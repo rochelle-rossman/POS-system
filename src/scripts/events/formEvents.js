@@ -52,7 +52,7 @@ const formEvt = () => {
             if (firebaseKey === item.orderId) {
               orderDetail(item.orderId).then((orderObject) => viewOrder(orderObject));
             } else {
-              console.warn('else');
+              console.warn(itemArray);
             }
           });
         });
