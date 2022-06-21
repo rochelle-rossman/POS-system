@@ -2,7 +2,7 @@ import {
   createOrder,
   updateOrder
 } from '../../api/orderData';
-import viewOrders from '../components/orderCards';
+import { viewOrders } from '../components/orderCards';
 
 const fromEvt = () => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {

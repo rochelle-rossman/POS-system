@@ -32,4 +32,4 @@ const viewOrders = (array) => {
   }
 };
 
-export default viewOrders;
+export { noOrders, viewOrders };
