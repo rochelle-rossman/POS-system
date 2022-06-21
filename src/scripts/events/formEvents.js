@@ -38,25 +38,18 @@ const formEvt = () => {
       updateOrder(orderObject).then(viewOrders);
     }
     if (e.target.id.includes('submit-item')) {
-      const [, firebaseKey] = e.target.id.split('--');
+      const [, orderId] = e.target.id.split('--');
       const itemObject = {
         itemName: document.querySelector('#item-name').value,
         itemPrice: document.querySelector('#item-price').value,
         itemDescription: document.querySelector('#item-description').value,
-        orderId: firebaseKey,
+        orderId,
         itemCategory: document.querySelector('#item-category').value
 
       };
+      console.warn(e.target.id, itemObject);
       createNewMenuItem(itemObject)
-        .then((itemArray) => {
-          itemArray.forEach((item) => {
-            if (firebaseKey === item.orderId) {
-              orderDetail(itemObject.orderId).then((orderObject) => viewOrder(orderObject));
-            } else {
-              console.warn(itemArray);
-            }
-          });
-        });
+        .then(() => orderDetail(itemObject.orderId).then((orderObject) => viewOrder(orderObject)));
     }
 
     if (e.target.id.includes('update-item')) {
