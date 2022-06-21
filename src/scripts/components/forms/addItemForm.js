@@ -21,7 +21,7 @@ const addItemForm = (obj = {}) => {
     <label for="itemCategory" class="form-label">Item Category</label>
     <input type="text" class="form-control" id="item-category">
  </div>
- <button type="submit" class="btn btn-primary">Add/Edit Item</button>
+ <button type="submit" id="add-item" class="btn btn-primary">Add/Edit Item</button>
  </form>`;
   renderToDOM('#main-container', domString);
 };
