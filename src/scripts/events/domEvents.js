@@ -1,12 +1,17 @@
+/* eslint-disable object-curly-newline */
 import { deleteCustomer, getCustomers } from '../../api/customerData';
 import {
-  deleteOrders, getOrders, getSingleOrder, updateOrder
+  deleteOrders, getOrders, getSingleOrder, updateOrder, createOrder
 } from '../../api/orderData';
 import viewOrders from '../components/orderCards';
 import addOrderForm from '../components/forms/createOrderForm';
 import orderDetail from '../../api/mergedData';
 import { showCustomers } from '../components/pages/customers';
 import viewOrder from '../components/viewOrderDetails';
+import renderRevenue from '../components/showRevenue';
+// import { getRevenue } from '../../api/revenueData';
+import addItemForm from '../components/forms/addItemForm';
+import { getSingleItem } from '../../api/menuData';
 
 // Customer card events
 const domEvents = () => {
@@ -44,6 +49,19 @@ const domEvents = () => {
         firebaseKey
       };
       updateOrder(orderObject).then(viewOrders);
+    }
+    if (e.target.id.includes('view-orders-dom')) {
+      getOrders().then((array) => viewOrders(array));
+    }
+    if (e.target.id.includes('create-order-dom')) {
+      addOrderForm().then((array) => createOrder(array));
+    }
+    if (e.target.id.includes('revenue-dom')) {
+      renderRevenue();
+    }
+    if (e.target.id.includes('edit-item')) {
+      const [, firebasekey] = e.target.id.split('--');
+      getSingleItem(firebasekey).then((itemObject) => addItemForm(itemObject));
     }
   });
 };

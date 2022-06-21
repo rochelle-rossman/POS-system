@@ -4,11 +4,12 @@ const formEvents = () => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if (e.target.dispatchEvent.includes('submit-item')) {
+    if (e.target.id.includes('submit-item')) {
       const itemObject = {
         itemName: document.querySelector('#item-name').value,
         itemPrice: document.querySelector('#item-price').value,
         itemDescription: document.querySelector('#item-description').value,
+        orderId: document.querySelector(),
         itemCategory: document.querySelector('#item-category').value
       };
       createNewMenuItem(itemObject).then(() => getMenuItems().then());
@@ -27,3 +28,4 @@ const formEvents = () => {
     }
   });
 };
+export default formEvents;

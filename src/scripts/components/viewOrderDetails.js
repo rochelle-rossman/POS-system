@@ -8,7 +8,7 @@ const viewOrder = (obj) => {
   clearDom();
   let domString = ' ';
 
-  domString = '<h1>TOTAL: </h1>';
+  domString = `<h1>TOTAL: </h1><button type="button" class="btn btn-success" id="addItemBtn--${obj.firebaseKey}">Add item</button><button type="button" class="btn btn-primary" id="payBtn">Go to payment</button>`;
 
   if (obj.itemObject.length) {
     let itemString = ' ';
@@ -18,7 +18,7 @@ const viewOrder = (obj) => {
       <div class="d-flex flex-column">
         <h2>${item.itemName}</h2>
         <h3>${item.itemPrice}</h3>
-        <i id="edit-item--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>
+        <i id="edit-item--${item.firebasekey}" class="fas fa-edit btn btn-info"></i>
        <i id="delete-item--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
         </div>
       </div>`;
