@@ -1,6 +1,6 @@
 /* eslint-disable object-curly-newline */
 import { deleteCustomer, getCustomers } from '../../api/customerData';
-import { deleteOrders, getOrders, getSingleOrder, createOrder } from '../../api/orderData';
+import { deleteOrders, getOrders, getSingleOrder, createOrder, updateOrder } from '../../api/orderData';
 import { viewOrders } from '../components/orderCards';
 import addOrderForm from '../components/forms/createOrderForm';
 import orderDetail from '../../api/mergedData';
@@ -38,6 +38,15 @@ const domEvents = () => {
     if (e.target.id.includes('update-order')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((orderObject) => addOrderForm(orderObject));
+      const orderObject = {
+        orderName: document.querySelector('#order-name').value,
+        customerPhone: document.querySelector('#customer-phone').value,
+        customerEmail: document.querySelector('#customer-email').value,
+        callIn: document.querySelector('#call-in').value,
+        isOpen: document.querySelector('#is-open').value,
+        firebaseKey
+      };
+      updateOrder(orderObject).then(viewOrders);
     }
     if (e.target.id.includes('view-orders-dom')) {
       getOrders().then((array) => viewOrders(array));

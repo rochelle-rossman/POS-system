@@ -1,18 +1,18 @@
 import axios from 'axios';
 import firebaseConfig from './apiKeys';
+// import renderToDOM from '../scripts/helpers/renderToDom';
 
 const dbUrl = firebaseConfig.databaseURL;
 
-const getRevenue = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/revenue.json?orderBy="firebaseKey"&equalTo="${firebaseKey}`)
+const getRevenue = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/revenue.json`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
       } else {
         resolve([]);
       }
-    })
-    .catch((reject));
+    }).catch((reject));
 });
 
 const createRevenue = (revenueObj) => new Promise((resolve, reject) => {

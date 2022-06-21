@@ -3,6 +3,7 @@ import renderRevenue from '../components/showRevenue';
 import homePage from '../components/pages/homepage';
 import { getOrders } from '../../api/orderData';
 import addOrderForm from '../components/forms/createOrderForm';
+import { getRevenue } from '../../api/revenueData';
 import { noOrders, viewOrders } from '../components/orderCards';
 
 const navEvt = () => {
@@ -11,7 +12,7 @@ const navEvt = () => {
       signOut();
     }
     if (e.target.id.includes('revLink')) {
-      renderRevenue();
+      getRevenue().then((array) => renderRevenue(array));
     }
     if (e.target.id.includes('create-order')) {
       addOrderForm();
