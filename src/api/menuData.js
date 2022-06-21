@@ -13,14 +13,22 @@ const getMenuItems = () => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const createNewMenuItem = (itemObject) => new Promise((resolve, reject) => {
+const createNewMenuItem = (itemObject, firebaseKey) => new Promise((resolve, reject) => {
+  // eslint-disable-next-line semi
+  axios.get(`${dbUrl}/orders/"${firebaseKey}".json`)
+  // .then(() => {
   axios.post(`${dbUrl}/items.json`, itemObject)
+    // .then((taco) => resolve(taco.data));
     .then((response) => {
-      const addFBK = { firebaseKey: response.data.name };
+      const addFBK = {
+        firebaseKey: response.data.name,
+        orderId: response.data.firebaseKey
+      };
       axios.patch(`${dbUrl}/items/${response.data.name}.json`, addFBK)
         .then(() => {
           getMenuItems().then((itemArray) => resolve(itemArray));
         });
+      // });
     }).catch((error) => reject(error));
 });
 

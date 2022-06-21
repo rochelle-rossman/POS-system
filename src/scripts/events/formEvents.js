@@ -38,13 +38,13 @@ const formEvt = () => {
       updateOrder(orderObject).then(viewOrders);
     }
     if (e.target.id.includes('submit-item')) {
-      const [, firebaseKey] = e.target.id.split('--');
+      const [orderId, firebaseKey] = e.target.id.split('--');
       const itemObject = {
         itemName: document.querySelector('#item-name').value,
         itemPrice: document.querySelector('#item-price').value,
         itemDescription: document.querySelector('#item-description').value,
-        orderId: firebaseKey,
-        itemCategory: document.querySelector('#item-category').value
+        itemCategory: document.querySelector('#item-category').value,
+        orderId
       };
       createNewMenuItem(itemObject)
         .then((itemArray) => {
