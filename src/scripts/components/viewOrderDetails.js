@@ -3,6 +3,10 @@ import renderToDOM from '../helpers/renderToDom';
 
 const noItems = () => {
   document.querySelector('#main-container').innerHTML = '<h1>No Items</h1>';
+  let domString = ' ';
+
+  domString = '<h1>TOTAL: </h1><button type="button" class="btn btn-success" id="addItemBtn">Add item</button><button type="button" class="btn btn-primary" id="payBtn">Go to payment</button>';
+  renderToDOM('#view', domString);
 };
 const viewOrder = (obj) => {
   clearDom();
