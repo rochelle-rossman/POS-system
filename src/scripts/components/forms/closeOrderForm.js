@@ -12,7 +12,7 @@ const closeOrderForm = () => {
     </select>
     <div class="mb-3">
     <label for="tip-amount" class="form-label">Tip Amount</label>
-    <input type="email" class="form-control" id="tip-amount" placeholder="$0.00">
+    <input type="number" class="form-control" id="tip-amount" placeholder="$0.00">
   </div>
   <div class="col-12">
   <button class="btn btn-primary" type="submit">Close Order</button>
