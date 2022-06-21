@@ -3,7 +3,7 @@ import axios from 'axios';
 const dbUrl = 'https://hip-hop-pizza-and-wangs-default-rtdb.firebaseio.com';
 
 const getMenuItems = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/items.json?orderBy="uid"&equalTo="${''}"`)
+  axios.get(`${dbUrl}/items.json`)
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
