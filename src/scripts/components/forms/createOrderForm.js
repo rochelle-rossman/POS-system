@@ -3,6 +3,7 @@ import renderToDOM from '../../helpers/renderToDom';
 
 const addOrderForm = (order = {}) => {
   clearDom();
+  console.warn(order);
   const domString = `
   <form id="${order.firebaseKey ? `update-order--${order.firebaseKey}` : 'submit-order'}" class="mb-4">
       <div class="mb-3">

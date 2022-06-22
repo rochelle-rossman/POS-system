@@ -47,7 +47,6 @@ const formEvt = () => {
         itemCategory: document.querySelector('#item-category').value
 
       };
-      console.warn(e.target.id, itemObject);
       createNewMenuItem(itemObject)
         .then(() => orderDetail(itemObject.orderId).then((orderObject) => viewOrder(orderObject)));
     }
