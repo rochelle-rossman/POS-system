@@ -9,6 +9,7 @@ const viewOrder = (obj) => {
   let domString = ' ';
 
   domString = `<h1>TOTAL: </h1><button type="button" class="btn btn-success" id="addItemBtn--${obj.firebaseKey}">Add item</button><button type="button" class="btn btn-primary" id="payBtn">Go to payment</button>`;
+  renderToDOM('#view', domString);
 
   if (obj.itemObject.length) {
     let itemString = ' ';
@@ -23,7 +24,6 @@ const viewOrder = (obj) => {
         </div>
       </div>`;
     });
-    renderToDOM('#view', domString);
     renderToDOM('#main-container', itemString);
   } else {
     noItems();
