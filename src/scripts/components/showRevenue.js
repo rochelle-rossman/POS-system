@@ -13,7 +13,7 @@ const renderRevenue = (obj) => {
   </div>
   <div class="dates">
   <p>Date Range:</p>
-  <p class="rangeOfDates">${obj[0].earliestDate} - ${obj[0].earliestDate}</p>
+  <p class="rangeOfDates">${obj[0].earliestDate} - ${obj[0].latestDate}</p>
   </div>
   <div class="extras">
   <p>Total Tips: $${obj[5]}</p>

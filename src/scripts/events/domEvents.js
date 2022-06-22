@@ -34,6 +34,7 @@ const domEvents = () => {
     if (e.target.id.includes('view-orderdetails-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       orderDetail(firebaseKey).then((itemOrderObject) => viewOrder(itemOrderObject));
+      orderDetail(firebaseKey).then((array) => console.warn(array.itemPrice));
     }
     if (e.target.id.includes('update-order')) {
       const [, firebaseKey] = e.target.id.split('--');
