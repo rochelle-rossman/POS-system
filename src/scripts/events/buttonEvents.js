@@ -11,7 +11,7 @@ const btnEvt = () => {
     }
     if (e.target.id.includes('payBtn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getOrderItems(firebaseKey).then((orderObject) => console.warn(orderObject));
+      getOrderItems(firebaseKey).then((orderObject) => getOrderItems(orderObject));
     }
   });
 };
