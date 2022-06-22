@@ -2,7 +2,8 @@ import clearDom from '../helpers/clearDom';
 import renderToDOM from '../helpers/renderToDom';
 
 const noItems = () => {
-  document.querySelector('#main-container').innerHTML = '<h1>No Items</h1>';
+  const itemString = '<h1>No Items</h1>';
+  renderToDOM('#main-container', itemString);
 };
 const viewOrder = (obj) => {
   clearDom();
